@@ -1,6 +1,6 @@
 """
 
-This is the server end of the chess engine. This code gives thinking ability to the engine.
+This is the server end of the chess engine.
 
 """
 
