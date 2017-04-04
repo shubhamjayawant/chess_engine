@@ -1,4 +1,10 @@
-from flask import Flask, request, render_template,redirect, url_for
+"""
+
+This is the server end of the chess engine. This code gives thinking ability to the engine.
+
+"""
+
+from flask import Flask, request, render_template
 from chess import Move
 from multiprocessing import Pool
 import copy, re, os, chess, chess.pgn, json, random, pickle, os.path
@@ -9,6 +15,7 @@ weights = []
 current_board_features = []
 games = []
 
+# These variables can be altered in order to boost up or slow down the training cycle
 game_pointer = 0
 training_completion = 0
 eta = 0.001
@@ -16,25 +23,110 @@ mobility_threshold = 0.6
 number_of_iterations = 2
 finished_iterations = 0
 
+# This function loads the homepage
 @app.route("/")
 def index():
     return render_template('main_page.html')
 
-@app.route("/testing_page.html")
-def testing_page():
+# This function is called by the client to start a new training cycle
+@app.route("/start_training", methods=['POST'])
+def start_training():
 
-    global board, whose_playing
-    board = chess.Board()
-    whose_playing = chess.WHITE
-    load_weights()
-    return render_template('testing_page.html')
+    new_training()
+    return 'Training has been started'
 
+# This function initializes variables to a start new training cycle. It makes sure that training happens in
+# the background as an async process
+def new_training():
+
+    global board, whose_playing, weights, current_board_features, training_completion,white_castle_status, black_castle_status
+    load_games()
+    initialize_weights_and_features()
+
+    for i in xrange(0,number_of_iterations):
+
+        for index,game in enumerate(games):
+
+            pool = Pool(processes=1)
+            board = chess.Board()
+            whose_playing = chess.WHITE
+
+            data = [game,board,whose_playing,weights,current_board_features, white_castle_status, black_castle_status]
+            result = pool.apply_async(async_training, args=(data,), callback=get_updated_values)
+            pool.close()
+            pool.join()
+
+    f = open('store.pckl', 'wb')
+    pickle.dump(weights, f)
+    f.close()
+
+# This function loads chess games to be used for training from the memory
+def load_games():
+
+    global games
+
+    for filename in os.listdir('data/'):
+        if filename.endswith(".pgn"): 
+            pgn = open('data/'+filename)
+            first_game = chess.pgn.read_game(pgn)
+            pgn.close()
+
+            node = first_game
+            game = []
+            while not node.is_end():
+                next_node = node.variation(0)
+                game.append(node.board().san(next_node.move))
+                node = next_node
+
+            games.append(game)
+
+# This function is used to get the percentage of games which have been referred in current iteration.
+def get_updated_values(resultant_data):
+
+    global games, game_pointer, training_completion, weights, current_board_features, white_castle_status, black_castle_status
+    weights = resultant_data[0]
+    current_board_features = resultant_data[1]
+    white_castle_status = resultant_data[2]
+    black_castle_status = resultant_data[3]
+
+    game_pointer = game_pointer + 1
+    training_completion = (game_pointer * 100)/len(games)
+
+# This function carries out training over given parameters in the background
+def async_training(params):
+
+    global board, whose_playing, weights, current_board_features,white_castle_status, black_castle_status
+
+    game = params[0]
+    board = params[1]
+    whose_playing = params[2]
+    weights = params[3]
+    current_board_features = params[4]
+    white_castle_status = params[5]
+    black_castle_status = params[6]
+
+    for expected_move in game:
+
+        get_current_board_features()
+        actual_move = get_move_to_be_played(board,whose_playing)
+        update_weights(expected_move,board.san(Move.from_uci(str(actual_move))))
+        board.push_san(expected_move)
+
+        if whose_playing == chess.WHITE:
+            whose_playing = chess.BLACK
+        else:
+            whose_playing = chess.WHITE
+
+    return [weights,current_board_features, white_castle_status, black_castle_status]
+
+# This function returns how much training has been completed
 @app.route("/get_completion_status", methods=['POST'])
 def get_completion_status():
 
     global training_completion
     return str(int(training_completion/number_of_iterations))+'% finished'
 
+# This function is called by the client side to stop on-going training cycle
 @app.route("/stop_training", methods=['POST'])
 def stop_training():
 
@@ -45,33 +137,26 @@ def stop_training():
 
     return 'Training has been stopped successfully'
 
-@app.route("/start_training", methods=['POST'])
-def start_training():
+# This function initializes a new game of chess and loads the weights in memory.
+@app.route("/testing_page.html")
+def start_testing():
 
-    new_training()
-    return 'Training has been started'
+    global board, whose_playing
+    board = chess.Board()
+    whose_playing = chess.WHITE
+    load_weights()
+    return render_template('testing_page.html')
 
-@app.route("/force_play", methods=['POST'])
-def force_play():
+# This function loads weights from the memory
+def load_weights():
+    global weights
 
-    global board,whose_playing
+    f = open('store.pckl', 'rb')
+    weights = pickle.load(f)
+    f.close()
 
-    final_move = get_move_to_be_played(board,whose_playing)
-
-    final_move = board.san(Move.from_uci(str(final_move)))
-
-    board.push_san(final_move)
-    
-    print board
-
-    if whose_playing == chess.WHITE:
-        whose_playing = chess.BLACK
-    else:
-        whose_playing = chess.WHITE
-
-    return str(board.fen())
-
-
+# This function is called by the client to send a user played move to the chess engine. This function returns 
+# the move to be played by the chess engine to the client.
 @app.route('/send_move', methods=['POST'])
 def send_move():
     global board,whose_playing
@@ -110,96 +195,30 @@ def send_move():
 
     return str(board.fen())
 
-def load_weights():
-    global weights
+# This function is called by the client to force the chess engine to make a move on current chess board
+@app.route("/force_play", methods=['POST'])
+def force_play():
 
-    f = open('store.pckl', 'rb')
-    weights = pickle.load(f)
-    f.close()
+    global board,whose_playing
 
-def load_games():
+    final_move = get_move_to_be_played(board,whose_playing)
 
-    global games
+    final_move = board.san(Move.from_uci(str(final_move)))
 
-    for filename in os.listdir('data/'):
-        if filename.endswith(".pgn"): 
-            pgn = open('data/'+filename)
-            first_game = chess.pgn.read_game(pgn)
-            pgn.close()
+    board.push_san(final_move)
+    
+    print board
 
-            node = first_game
-            game = []
-            while not node.is_end():
-                next_node = node.variation(0)
-                game.append(node.board().san(next_node.move))
-                node = next_node
+    if whose_playing == chess.WHITE:
+        whose_playing = chess.BLACK
+    else:
+        whose_playing = chess.WHITE
 
-            games.append(game)
-
-def new_training():
-
-    global board, whose_playing, weights, current_board_features, training_completion,white_castle_status, black_castle_status
-    load_games()
-    initialize_weights_and_features()
-
-    for i in xrange(0,number_of_iterations):
-
-        for index,game in enumerate(games):
-
-            pool = Pool(processes=1)
-            board = chess.Board()
-            whose_playing = chess.WHITE
-
-            data = [game,board,whose_playing,weights,current_board_features, white_castle_status, black_castle_status]
-            result = pool.apply_async(async_training, args=(data,), callback=get_updated_values)
-            pool.close()
-            pool.join()
-
-    f = open('store.pckl', 'wb')
-    pickle.dump(weights, f)
-    f.close()
-
-def get_updated_values(resultant_data):
-
-    global games, game_pointer, training_completion, weights, current_board_features, white_castle_status, black_castle_status
-    weights = resultant_data[0]
-    current_board_features = resultant_data[1]
-    white_castle_status = resultant_data[2]
-    black_castle_status = resultant_data[3]
-
-    game_pointer = game_pointer + 1
-    training_completion = (game_pointer * 100)/len(games)
-
-def async_training(params):
-
-    global board, whose_playing, weights, current_board_features,white_castle_status, black_castle_status
-
-    game = params[0]
-    board = params[1]
-    whose_playing = params[2]
-    weights = params[3]
-    current_board_features = params[4]
-    white_castle_status = params[5]
-    black_castle_status = params[6]
-
-    for expected_move in game:
-
-        get_current_board_features()
-        actual_move = get_move_to_be_played(board,whose_playing)
-        update_weights(expected_move,board.san(Move.from_uci(str(actual_move))))
-        board.push_san(expected_move)
-
-        if whose_playing == chess.WHITE:
-            whose_playing = chess.BLACK
-        else:
-            whose_playing = chess.WHITE
-
-    return [weights,current_board_features, white_castle_status, black_castle_status]
-
-
+    return str(board.fen())
 
 #-------------------------------ML calculations--------------------------------#
 
+# This function initializes the values of all the weights and board features to random values and 0 respectively
 def initialize_weights_and_features():
 
     global weights,current_board_features
@@ -208,6 +227,7 @@ def initialize_weights_and_features():
         weights.append(random.uniform(0.0, 1.0))
         current_board_features.append(0)
 
+#This function calculates the board features of current board position
 def get_current_board_features():
 
     global current_board_features, board, whose_playing
@@ -243,6 +263,7 @@ def update_weights(expected_move, actual_move):
 
         weights[i] = weights[i] + eta * (expected_target_value - actual_target_value) * current_board_features[i]
 
+# This function calculates target values for all legal moves and then returns the move with highest target value
 def get_move_to_be_played(board, whose_playing):
 
     moves_and_target_values = {}
@@ -255,6 +276,7 @@ def get_move_to_be_played(board, whose_playing):
 
     return max(moves_and_target_values, key=lambda i: moves_and_target_values[i])
 
+# This function is used to calculate the target value of a given move
 def get_target_value(move,board,whose_playing):
 
     temp_board = copy.deepcopy(board)
@@ -305,6 +327,13 @@ def will_it_cause_checkmate(temp_board):
         return 10
     return 0
 
+"""
+This function decides whether the king is safe or not given the color of king and board position.
+
+It checks for all the squares around the given king, if more than 3 squares adjacent to king's square are attacked
+by the opposition, it returns 0 otherwise it returns 5.
+
+"""
 def will_the_king_be_safe(temp_board,whose_playing):
 
     def get_squares_to_consider(board,kings_position,whose_playing):
@@ -371,6 +400,16 @@ def will_the_king_be_safe(temp_board,whose_playing):
 
     return 5
 
+"""
+
+Function which decides whether the castle of the given color is safe or not.
+
+It considers only a quadrant of a chessboard for carrying out its operation. The selection of the quadrant
+depends upon the color who is playing and the side on which the castle has been made. If number of attacked 
+squares by the opposition are more than the safety_threshold then this function returns 0, otherwise it returns 5
+
+"""
+
 def will_the_castle_be_safe(temp_board,whose_playing):
 
     def has_castled(whose_playing):
@@ -430,14 +469,22 @@ def will_the_castle_be_safe(temp_board,whose_playing):
         return 5
     return 0
 
+# This function returns the positions of the pieces given piece type, the color to consider and the board position
 def get_piece_position(board,whose_playing,piece):
 
     return [square for square in board.pieces(piece,whose_playing)]
 
-def get_mobility(board,position):
+# This function calculates the mobility of any given piece on a given chess board
+def get_mobility(board,piece_position):
 
-    return len([temp for temp in board.attacks(position)]) * 1.0
+    return len([temp for temp in board.attacks(piece_position)]) * 1.0
 
+""" 
+
+This function determines whether a piece is worthy being called as free to move
+It calculates the mobility of the piece and then compares it with the threshold value of that piece.
+
+"""
 def is_piece_free_to_move(temp_board,whose_playing,piece,threshold):
 
     temp_mobility = 0.0
@@ -451,6 +498,12 @@ def is_piece_free_to_move(temp_board,whose_playing,piece,threshold):
 
     return 1
 
+"""
+
+This function checks whether all the pieces of any given color on a given board are attacked by the opposition 
+or not. If certain unsupported piece is under attack of the opposition, it returns 0. Else, it returns 8.
+
+"""
 def is_everything_safe(temp_board,whose_playing,piece):
 
     def is_unsupported(board,piece_position,whose_playing):
@@ -484,6 +537,12 @@ def is_everything_safe(temp_board,whose_playing,piece):
 
     return 8
 
+"""
+
+This function checks whether any of the opposition's piece is unsupported and can be captured by any of 
+the given color's pieces. If any such piece ids found, it returns 5. Else, it returns 0.
+
+"""
 def can_opps_unsupported_piece_be_killed(temp_board,whose_playing,piece):
 
     def is_unsupported(board,piece_position,opposition_color):

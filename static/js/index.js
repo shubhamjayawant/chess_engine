@@ -35,6 +35,9 @@ var onDrop = function(source, target) {
   if (game.in_checkmate() === false) {
     send_move_to_engine(to_send[to_send.length - 1]);
   }
+  else{
+    $('#forcePlayBtn').attr('disabled','disabled');
+  }
 };
 
 function send_move_to_engine(input) {
