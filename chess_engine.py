@@ -51,6 +51,27 @@ def start_training():
     new_training()
     return 'Training has been started'
 
+@app.route("/force_play", methods=['POST'])
+def force_play():
+
+    global board,whose_playing
+
+    final_move = get_move_to_be_played(board,whose_playing)
+
+    final_move = board.san(Move.from_uci(str(final_move)))
+
+    board.push_san(final_move)
+    
+    print board
+
+    if whose_playing == chess.WHITE:
+        whose_playing = chess.BLACK
+    else:
+        whose_playing = chess.WHITE
+
+    return str(board.fen())
+
+
 @app.route('/send_move', methods=['POST'])
 def send_move():
     global board,whose_playing

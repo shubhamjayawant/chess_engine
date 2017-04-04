@@ -7,7 +7,7 @@ var board,
         $.ajax({
           type: "POST",
           url: "/force_play",
-          success: make_move
+          success: on_success
       });
     });
 });
