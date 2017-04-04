@@ -1,0 +1,17 @@
+[Event "Capablanca - Corzo"]
+[Site "Habana CUB"]
+[Date "1901.11.29"]
+[EventDate "1901.11.17"]
+[Round "6"]
+[Result "1/2-1/2"]
+[White "Juan Corzo"]
+[Black "Jose Raul Capablanca"]
+[ECO "C25"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "39"]
+
+1.e4 e5 2.Nc3 Nc6 3.f4 exf4 4.Nf3 g5 5.h4 g4 6.Ng5 h6 7.Nxf7
+Kxf7 8.d4 d5 9.exd5 Qe7+ 10.Be2 f3 11.gxf3 gxf3 12.O-O Qxh4
+13.Bxf3 Nf6 14.Bh5+ Ke7 15.Qe2+ Kd8 16.Rxf6 Rg8+ 17.Rg6 Rxg6+
+18.Bxg6 Qg3+ 19.Qg2 Qe1+ 20.Qf1 1/2-1/2

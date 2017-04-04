@@ -1,0 +1,51 @@
+[Event "Varna Olympiad Final"]
+[Site "Varna BUL"]
+[Date "1962.10.04"]
+[EventDate "?"]
+[Round "7"]
+[Result "0-1"]
+[White "Wolfgang Unzicker"]
+[Black "Robert James Fischer"]
+[ECO "B92"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "52"]
+
+1. e4 {Notes by Bobby Fischer} c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4
+Nf6 5. Nc3 a6 6. Be2 {On and off, White resorts to this solid
+and still respected system (championed by Smyslov) whenever
+the sharper tries fail.} e5 {Black's expectation in this
+Najdorf Variation is that his control of important central
+squares, with possibilities of Q-side expansion, will more
+than compensate for the slight weakness of his backward QP.}
+7. Nb3 Be6 {To provoke f4-5 weakening White's KP.} 8. O-O Nbd7
+9. f4 Qc7 10. f5 Bc4 11. a4 {To hinder ...b5.} Be7 {Better
+than 11...Rc8 12 a5 Be7 13 Bxc4 Qxc4 14 Ra4 Qc7 15 Be3 h6 16
+Rf2 with a bind. (Schmid-Evans, Varna 1962)} 12. Be3 O-O
+13. a5 {A critical alternative is 13 g4 d5! 14 exd5 (if 14 g5
+d4! or 14 Nxd5 Nxd5 15 exd5 Nf6 16 d6? Bxd6 17 Bxc4 Qxc4 18
+Qxd6? Qxg4+ 19 Kh1 Qe4+), Bb4 15 g5 Bxc3 16 gxf6 Bxb2 17 fxg7
+Rfd8 18 Rb1 Bc3. White's Pawns are overextended and his King
+is exposed.} b5 {Too passive is 13...h6 14 g4 Nh7 15 Bf2
+followed by h4.} 14. axb6 Nxb6 15. Bxb6 {? At Curacao 1962,
+Geller had found the right line : 15 Kh1! Rfc8 16 Bxb6 Qxb6 17
+Bxc4 Rxc4 18 Qe2 Rb4 19 Ra2! and Black is hard-pressed to
+defend his a-pawn, but 19...h6! 20 Rfa1 Bf8 21 Rxa6 Rxa6 22
+Rxa6 Qb7 23 Na5 Qc7 24 Nb3 Qb7 (Zuckerman)=.} Qxb6+ 16. Kh1
+Bb5 {! Intending ...Bc6 followed by a5.} 17. Bxb5 {White has
+alredy dissipated his theoretical advantage. He should settle
+for 17 Nxb5 axb5 18 Qd3 with opposite colored Bishops.} axb5
+18. Nd5 Nxd5 19. Qxd5 Ra4 {! Avoids conceding the a-file and
+puts pressure on the KP.} 20. c3 Qa6 21. h3 {It's hard for
+White to hit upon a constructive plan. At Curacao 1962, Tal
+played against me 21 Rad1 Rc8 22 Nc1 b4 23 Nd3!? (White's in a
+bad way anyhow) bxc3 24 bxc3 and now ...Rxc3 (instead of my
+...Ra5 lemon) wins outright. If 25 Nxe5 dxe5 26 Qxe5 (Qd8+
+Bf8!) Bb4! 27 Qxc3 Qxf1+! (Kmoch).} Rc8 22. Rfe1 h6 {! A handy
+'luft', as becomes apparent later.} 23. Kh2 Bg5 24. g3 {?
+Creating more K-side weaknesses. Better is 24 Rad1.} Qa7
+25. Kg2 Ra2 26. Kf1 {What else? On 26 Rxa2 Qxa2 27 Re2 Rxc3!
+Now Black has a decisive shot.} Rxc3 {! On 27 Rxa2 (27 bxc3
+Qf2 mate) Rf3+ 28 Ke2 Rf2+ 29 Kd3 Qxa2 30 Ra1 Qxb2
+wins. Black's first rank is no longer vulnerable since the
+King can escape to h7 on the check.} 0-1

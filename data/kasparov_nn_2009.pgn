@@ -1,0 +1,22 @@
+[Event "Zurich 200 Year Jubilee simul"]
+[Site "?"]
+[Date "2009.08.22"]
+[EventDate "2006.08.05"]
+[Round "?"]
+[Result "1-0"]
+[White "Garry Kasparov"]
+[Black "NN"]
+[ECO "A31"]
+[WhiteElo "2812"]
+[BlackElo "2000"]
+[PlyCount "81"]
+
+1. d4 Nf6 2. c4 c5 3. Nf3 cxd4 4. Nxd4 e5 5. Nb5 d5 6. cxd5
+Bb4+ 7. N1c3 O-O 8. a3 Bc5 9. Na4 Bb6 10. Nxb6 Qxb6 11. Nc3
+Bf5 12. e3 Na6 13. f3 e4 14. g4 Bg6 15. f4 h5 16. f5 Bh7
+17. g5 Ng4 18. Qd4 Rfe8 19. Bb5 Ne5 20. O-O Nf3+ 21. Rxf3 Qxd4
+22. exd4 exf3 23. Bxe8 Rxe8 24. Bf4 Bxf5 25. Kf2 b5 26. Be5 b4
+27. Nb5 Rc8 28. Kxf3 Rc2 29. Bd6 Rxb2 30. axb4 Nxb4 31. Bxb4
+Rxb4 32. Nd6 Bg4+ 33. Ke4 Rb2 34. Rxa7 Re2+ 35. Kd3 Rxh2
+36. g6 fxg6 37. Ra8+ Kh7 38. Nf7 g5 39. Rh8+ Kg6 40. Ne5+ Kf5
+41. Rf8# 1-0

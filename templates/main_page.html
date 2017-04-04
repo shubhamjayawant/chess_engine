@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<style>
+		.loadscreen {
+		    display: none; 
+		    position: fixed;
+		    z-index: 1;
+		    left: 0;
+		    top: 0;
+		    width: 100%;
+		    height: 100%;
+		    overflow: auto;
+		    background-color: rgb(0,0,0);
+		    background-color: rgba(0,0,0,0.4);
+		    -webkit-animation-name: fadeIn; 
+		    -webkit-animation-duration: 0.4s;
+		    animation-name: fadeIn;
+		    animation-duration: 0.4s
+		}
+
+		.loadscreen-content {
+		    position: fixed;
+		    bottom: 30%;
+		    left:20%;
+		    background-color: #fefefe;
+		    width: 60%;
+		    -webkit-animation-name: slideIn;
+		    -webkit-animation-duration: 0.4s;
+		    animation-name: slideIn;
+		    animation-duration: 0.4s
+		}
+
+		.loadscreen-header {
+		    padding: 2% 3%;
+		    background:#5498d8;
+		    color: white;
+		} 
+
+		.loadscreen-body{
+		    padding: 3%;
+		    margin-left:30%;
+		}
+		.loadscreen-body-loader {display:inline-block;}
+		#completionStatus {position: absolute;display:inline-block;bottom: 40%;font-size: 20px;}
+
+		.loadscreen-footer {
+		    padding: 2% 0% 4% 0;
+		    color: white;
+		}
+
+		@-webkit-keyframes slideIn {
+		    from {bottom: 0%; opacity: 0} 
+		    to {bottom: 30%; opacity: 1}
+		}
+
+		@keyframes slideIn {
+		    from {bottom: 0%; opacity: 0}
+		    to {bottom: 30%; opacity: 1}
+		}
+
+		@-webkit-keyframes fadeIn {
+		    from {opacity: 0} 
+		    to {opacity: 1}
+		}
+
+		@keyframes fadeIn {
+		    from {opacity: 0} 
+		    to {opacity: 1}
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>My chess engine</title>
+	<meta name='viewport' content='width=device-width'>
+  	<link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+	<link rel='stylesheet prefetch' href='http://www.willangles.com/projects/chessboard/css/chessboard-0.3.0.css'>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+	<div class="main_body">
+		<h1> Welcome. Select engine mode to begin.</h1>
+		<div class="btn-wrapper">
+		<center>
+			<input class="game-button" type="button" id="trnBtn" value="Training" /><br><br>
+			<input class="game-button" type="button" id="tstBtn" value="Testing" />
+		</center>
+		</div>
+	</div>
+
+	<div id="myloadscreen" class="loadscreen">
+  <div class="loadscreen-content">
+    <div class="loadscreen-header">
+      <font size="5%">Training in progress</font>
+    </div>
+    <div class="loadscreen-body">
+      <div class="loadscreen-body-loader">
+        <img src = "../static/img/gears.gif" height="70%" width="70%">
+      </div>
+      <p id="completionStatus">0% finished</p>
+    </div>
+    <div class="loadscreen-footer">
+    <center>
+      <button id="closeBtn">Stop training</button>
+    </center>
+    </div>
+  </div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src="{{ url_for('static', filename='js/main_page.js') }}"></script>
+<script>
+var loadscreen = document.getElementById('myloadscreen');
+var btn = document.getElementById("trnBtn");
+var span = document.getElementById("closeBtn");
+
+btn.onclick = function() {
+    loadscreen.style.display = "block";
+}
+
+span.onclick = function() {
+    loadscreen.style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

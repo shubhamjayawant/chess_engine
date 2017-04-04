@@ -1,0 +1,57 @@
+[Event "US Championship 1963/64"]
+[Site "New York, NY USA"]
+[Date "1963.12.18"]
+[EventDate "1963.??.??"]
+[Round "3"]
+[Result "0-1"]
+[White "Robert Eugene Byrne"]
+[Black "Robert James Fischer"]
+[ECO "E60"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "42"]
+
+1. d4 {Notes from various sources.} Nf6 2. c4 g6 3. g3 c6
+4. Bg2 d5 5. cxd5 {5.Qb3 maintains more tension. -- Fischer}
+cxd5 6. Nc3 Bg7 7. e3 O-O 8. Nge2 Nc6 9. O-O b6 10. b3 {It's
+hard for either side to introduce an imbalance into this
+essentially symmetrical variation. Deadeye equality also
+ensues afer 10.Nf4 e6 11.b3 Ba6 12.Re1 Rc8 13.Ba3 Re8 14.Rc1
+(Stahlberg-Flohr, Kemeri 1937) -- Fischer} Ba6 11. Ba3 {After
+White's 11th move I should adjudicate his position as slightly
+superior, and at worst completely safe. To turn this into a
+mating position in eleven more moves is more witchcraft than
+chess! Quite honestly, I do not see the man who can stop Bobby
+at this time. -- K.F. Kirby, South African Chess Quarterly}
+Re8 12. Qd2 e5 {! I was a bit worried about weakening my QP,
+but felt that the tremendous activity obtained by my minor
+pieces would permit White no time to exploit it. 12...e6 would
+probably lead to a draw. -- Fischer} 13. dxe5 Nxe5 14. Rfd1
+{"Add another to those melancholy case histories entitled: The
+Wrong Rook." -- Fischer ~ "This is very much a case of 'the
+wrong rook'. One can understand Byrne's desire to break the
+pin on the e2-knight, but this turns out to be less important
+than other considerations. Fischer spends a lot of time and
+energy analysing the superior 14. Rad1!, but still comes to
+the conclusion that Black can keep the advantage." -- John
+Nunn} Nd3 {Now it's all systems go for the Fischer rocket. --
+Robert Wade} 15. Qc2 {There is hardly any other defense to the
+threat of ...Ne4. -- Fischer} Nxf2 {! The key to Black's
+previous play. The complete justification for this sac does
+not become apparent until White resigns! -- Fischer} 16. Kxf2
+Ng4+ 17. Kg1 Nxe3 18. Qd2 {Byrne: As I sat pondering why
+Fischer would choose such a line, because it was so obviously
+lost for Black, there suddenly comes...} Nxg2 {!! This
+dazzling move came as the shocker... the culminating
+combination is of such depth that, even at the very moment at
+which I resigned, both grandmasters who were commenting on the
+play for the spectators in a separate room believed I had a
+won game! -- Robert Byrne} 19. Kxg2 d4 {!} 20. Nxd4 Bb7+ {The
+King is at Black's mercy. -- Fischer} 21. Kf1 {In a room set
+aside for commentaries on the games in progress, two
+grandmasters were stating, for the benefit of the spectators,
+that Byrne had a won game. Byrne's reply to Fischer's next
+move must have been jaw dropping! -- Wade} Qd7 {And White
+resigns. Fischer writes: "A bitter disappointment. I'd hoped
+for 22.Qf2 Qh3+ 23.Kg1 Re1+!! 24.Rxe1 Bxd4 with mate to follow
+shortly."} 0-1

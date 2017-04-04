@@ -1,0 +1,20 @@
+[Event "New York"]
+[Site "New York, NY USA"]
+[Date "1906.09.??"]
+[EventDate "?"]
+[Round "?"]
+[Result "1-0"]
+[White "Jose Raul Capablanca"]
+[Black "Robert Raubitschek"]
+[ECO "C67"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "67"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.d4 d5 6.Nxe5 Bd7
+7.Nxd7 Qxd7 8.Nc3 f5 9.Nxe4 fxe4 10.c4 O-O-O 11.Bg5 Be7
+12.Bxe7 Qxe7 13.Bxc6 bxc6 14.c5 Qf6 15.Qa4 Kb8 16.Rac1 Ka8
+17.b4 Rb8 18.a3 Rhe8 19.Qa6 Re6 20.a4 Qxd4 21.b5 Qf6 22.Rc2
+cxb5 23.c6 b4 24.Rc5 Qd4 25.Rb5 Ree8 26.Rb7 Qc5 27.h3 d4
+28.Kh2 d3 29.Rc1 Qxf2 30.Rf1 Qd4 31.Rf5 e3 32.Rxa7+ Qxa7
+33.Ra5 Qxa6 34.Rxa6# 1-0

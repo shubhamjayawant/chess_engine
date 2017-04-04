@@ -1,0 +1,17 @@
+[Event "Biel-A"]
+[Site "Biel-A"]
+[Date "1987.??.??"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Jean-Luc Costa"]
+[Black "Judit Polgar"]
+[ECO "A31"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "44"]
+
+1.d4 Nf6 2.c4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Nb5 d5 6.cxd5 Bc5
+7.N5c3 O-O 8.g3 Ng4 9.e3 f5 10.Bg2 f4 11.h3 Nxf2 12.Kxf2 fxe3
+13.Ke1 Rf2 14.Rg1 Qf8 15.Qd3 Na6 16.a3 Bf5 17.Be4 Bxe4 18.Qxe4
+Bd4 19.Bxe3 Nc5 20.Bxd4 exd4 21.Qxd4 Re8+ 22.Kd1 Qf3+ 0-1

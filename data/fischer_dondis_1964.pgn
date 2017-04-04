@@ -1,0 +1,17 @@
+[Event "Fischer Simul Tour"]
+[Site "Fitchburg, MA USA"]
+[Date "1964.03.02"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Robert James Fischer"]
+[Black "Harold Dondis"]
+[ECO "C23"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "38"]
+
+1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.d4 Nxd4
+7.Nd5 Ne6 8.Qxe5 c6 9.Nc3 Qf6 10.Qxf6 gxf6 11.Nge2 Nf5 12.g4
+Nfd4 13.Nxd4 Nxd4 14.Be3 Nxb3 15.axb3 d5 16.Rxa7 Rxa7 17.Bxa7
+Bxg4 18.Bd4 Be7 19.Kd2 c5 0-1

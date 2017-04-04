@@ -1,0 +1,21 @@
+[Event "Clock Simul"]
+[Site "Montreal CAN"]
+[Date "1964.02.24"]
+[EventDate "?"]
+[Round "?"]
+[Result "1-0"]
+[White "Robert James Fischer"]
+[Black "William Oaker"]
+[ECO "C51"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "81"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 Na5 7.Bd3
+d6 8.dxe5 Nc6 9.Qb3 Nxe5 10.Nxe5 dxe5 11.Bc4 Be6 12.Bxe6 fxe6
+13.Ba3 Qd3 14.Nd2 Rd8 15.O-O-O Bg5 16.f4 exf4 17.Nf3 Qe3+
+18.Kb1 Be7 19.Rxd8+ Kxd8 20.Nd4 Qxe4+ 21.Ka1 Kd7 22.Rd1 Bxa3
+23.Nxe6+ Ke7 24.Ng5 Qf5 25.Qxa3+ Kf6 26.Qf8+ Kxg5 27.Qxg7+ Kh5
+28.Qxh8 Nf6 29.Re1 Kg6 30.Qd8 Qd5 31.Qxc7 Qxg2 32.Qxf4 Qg4
+33.Qc7 Qd7 34.Qxd7 Nxd7 35.Re7 Nc5 36.Rc7 Ne4 37.Rxb7 Nxc3
+38.Rxa7 h5 39.a4 Kg5 40.a5 Kh4 41.a6 1-0

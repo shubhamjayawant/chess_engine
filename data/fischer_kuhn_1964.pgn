@@ -1,0 +1,16 @@
+[Event "Chicago sim"]
+[Site "Chicago, IL USA"]
+[Date "1964.03.23"]
+[EventDate "?"]
+[Round "?"]
+[Result "1-0"]
+[White "Robert James Fischer"]
+[Black "Juergen Kuhn"]
+[ECO "C57"]
+[WhiteElo "2780"]
+[BlackElo "?"]
+[PlyCount "23"]
+
+1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.d4 f6
+7.dxe5 Nxe5 8.Bxd5 fxg5 9.O-O Bd7 10.Re1 Qf6 11.Qh5+ Qg6
+12.Rxe5+ 1-0

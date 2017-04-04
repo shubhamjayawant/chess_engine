@@ -1,0 +1,16 @@
+[Event "Blitz Game"]
+[Site "New York, NY USA"]
+[Date "1953.01.??"]
+[EventDate "?"]
+[Round "?"]
+[Result "1-0"]
+[White "Dan E Mayers"]
+[Black "Robert James Fischer"]
+[ECO "C33"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "33"]
+
+1.e4 e5 2.f4 exf4 3.Bc4 Nf6 4.Nc3 c6 5.d4 Bb4 6.e5 Ne4 7.Qh5
+O-O 8.Nge2 d5 9.Bb3 g6 10.Qh6 Bg4 11.Bd2 Nxd2 12.Kxd2 g5 13.h4
+gxh4 14.Rxh4 Bf5 15.Rah1 Be7 16.Rg4+ Bg6 17.Qxh7# 1-0

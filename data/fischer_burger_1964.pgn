@@ -1,0 +1,17 @@
+[Event "Analysis"]
+[Site "Analysis"]
+[Date "1964.??.??"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Robert James Fischer"]
+[Black "Robert Eugene Burger"]
+[ECO "C57"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "28"]
+
+1. e4 {This is unattributed analysis of game 1800759} e5
+2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nd4 6. c3 b5 7. Bf1
+Nxd5 8. cxd4 Qxg5 9. Bxb5+ Kd8 10. Qf3 Bb7 11. O-O e4 12. Qxe4
+Bd6 13. d3 Bxh2+ 14. Kxh2 Nf4 0-1

@@ -1,0 +1,15 @@
+[Event "Simul, 23b"]
+[Site "Washington, DC USA"]
+[Date "1909.01.06"]
+[EventDate "?"]
+[Round "?"]
+[Result "1-0"]
+[White "Jose Raul Capablanca"]
+[Black "Edward Beckley Adams"]
+[ECO "C46"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "17"]
+
+1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Nxe5 5.d4 Bxd4 6.Qxd4 Qf6
+7.Nb5 Kd8 8.Qc5 Nc6 9.Qf8# 1-0

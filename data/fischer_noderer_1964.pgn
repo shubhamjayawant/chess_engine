@@ -1,0 +1,19 @@
+[Event "Fischer tour simul"]
+[Site "Hartford, CT USA"]
+[Date "1964.03.03"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Robert James Fischer"]
+[Black "Lawrence C Noderer"]
+[ECO "C19"]
+[WhiteElo "2780"]
+[BlackElo "?"]
+[PlyCount "62"]
+
+1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.e5 c5 5.a3 Bxc3+ 6.bxc3 Ne7 7.a4
+Qa5 8.Bd2 Qc7 9.Qg4 Nf5 10.Nf3 Nc6 11.Bd3 Nce7 12.O-O Bd7
+13.a5 h5 14.Qg5 Rh6 15.dxc5 Qxc5 16.Bc1 Qxc3 17.Ba3 f6 18.exf6
+gxf6 19.Qc1 Rg6 20.Bxe7 Kxe7 21.Ra3 Qb4 22.Bxf5 exf5 23.Rb3
+Qg4 24.g3 Bc6 25.Re1+ Kf7 26.Rbe3 d4 27.Re7+ Kg8 28.Nd2 Qh3
+29.f3 h4 30.R1e2 hxg3 31.Qa3 gxh2+ 0-1

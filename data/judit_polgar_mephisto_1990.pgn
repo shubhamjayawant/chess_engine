@@ -1,0 +1,23 @@
+[Event "Amsterdam"]
+[Site "?"]
+[Date "1990.??.??"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Judit Polgar"]
+[Black "Mephisto (Computer)"]
+[ECO "B14"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[PlyCount "102"]
+
+1.e4 c6 2.d4 d5 3.exd5 cxd5 4.c4 Nf6 5.Nc3 Nc6 6.Nf3 Bg4
+7.cxd5 Nxd5 8.Qb3 Bxf3 9.gxf3 e6 10.Qxb7 Nxd4 11.Bb5+ Nxb5
+12.Qc6+ Ke7 13.Qxb5 Qd6 14.Nxd5+ Qxd5 15.Bg5+ f6 16.Qxd5 exd5
+17.Be3 Ke6 18.O-O-O Bb4 19.Rd3 Rhc8+ 20.Kb1 a6 21.Rhd1 Rd8
+22.a3 Ba5 23.b4 Bc7 24.Rc1 Bxh2 25.Rh1 Be5 26.Rxh7 f5 27.f4
+Bf6 28.Rh1 d4 29.Bd2 Kd5 30.Rc1 Rac8 31.Re1 Re8 32.Rxe8 Rxe8
+33.Rh3 Re2 34.Kc2 Rxf2 35.Kd3 Rf1 36.a4 Ra1 37.Rh5 Ra3+ 38.Ke2
+Ke4 39.Rh8 d3 40.Kf2 Rxa4 41.Re8+ Kd4 42.Be3+ Kc3 43.Rc8+ Kxb4
+44.Bd2+ Kb3 45.Ke3 Rc4 46.Ra8 Kc2 47.Ba5 Rc6 48.Re8 g6 49.Rg8
+Bb2 50.Rd8 Bc1+ 51.Kf3 d2 0-1

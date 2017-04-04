@@ -1,0 +1,18 @@
+[Event "Fischer tour simul"]
+[Site "Fitchburg, MA USA"]
+[Date "1964.03.02"]
+[EventDate "?"]
+[Round "?"]
+[Result "0-1"]
+[White "Robert James Fischer"]
+[Black "Clarence Barber"]
+[ECO "C18"]
+[WhiteElo "2780"]
+[BlackElo "?"]
+[PlyCount "52"]
+
+1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.e5 c5 5.a3 cxd4 6.axb4 dxc3 7.Qg4
+cxb2 8.Bxb2 g6 9.Nf3 Nh6 10.Qf4 Nf5 11.g4 Nh4 12.b5 Nxf3+
+13.Qxf3 b6 14.h4 Nd7 15.h5 g5 16.h6 Bb7 17.Bd4 Qc7 18.Bd3 Nxe5
+19.Qe3 f6 20.O-O-O Nxd3+ 21.Rxd3 e5 22.Bb2 d4 23.Qh3 Bxh1
+24.Qxh1 Rc8 25.Rd2 O-O 26.Kb1 Qc4 0-1

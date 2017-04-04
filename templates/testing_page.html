@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>My chess engine</title>
+  
+<meta name='viewport' content='width=device-width'>
+  
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel='stylesheet prefetch' href='http://www.willangles.com/projects/chessboard/css/chessboard-0.3.0.css'>
+
+      <link rel="stylesheet" href="../static/css/style.css">
+
+  
+</head>
+
+<body>
+  <script src="http://www.willangles.com/projects/chessboard/js/chess.js"></script>
+
+  <div id="board"></div>
+<input class="game-button" type="button" id="newGameBtn" value="New game" /><br>
+<input class="game-button" type="button" id="forcePlayBtn" value="Force play" /><br>
+<input class="game-button" type="button" id="flipBoardBtn" value="Flip board" />
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='http://www.willangles.com/projects/chessboard/js/chessboard-0.3.0.js'></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+</html>
