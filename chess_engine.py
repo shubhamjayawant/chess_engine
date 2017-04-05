@@ -481,7 +481,7 @@ def get_mobility(board,piece_position):
 
 """ 
 
-This function determines whether a piece is worthy being called as free to move
+This function determines whether a piece is free to move or not
 It calculates the mobility of the piece and then compares it with the threshold value of that piece.
 
 """
@@ -539,8 +539,8 @@ def is_everything_safe(temp_board,whose_playing,piece):
 
 """
 
-This function checks whether any of the opposition's piece is unsupported and can be captured by any of 
-the given color's pieces. If any such piece ids found, it returns 5. Else, it returns 0.
+This function checks whether opposition's any piece is unsupported and can be captured by any of 
+the given color's pieces. If such piece is found, it returns 5. Else, it returns 0.
 
 """
 def can_opps_unsupported_piece_be_killed(temp_board,whose_playing,piece):
