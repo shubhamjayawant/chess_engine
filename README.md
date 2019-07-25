@@ -25,8 +25,8 @@ A trainable chess engine with an integrated GUI which uses linear regression to 
  _Chess engine training in progress_
  ![Chess engine training in progress](https://github.com/shubhamjayawant/chess_engine/blob/master/screenshots/2.png)
 
- _Chess engine playing with white pieces_
- ![Chess engine playing with white pieces](https://github.com/shubhamjayawant/chess_engine/blob/master/screenshots/3.png)
-
  _Chess engine playing with black pieces_
- ![Chess engine playing with black pieces](https://github.com/shubhamjayawant/chess_engine/blob/master/screenshots/4.png)
+ ![Chess engine playing with black pieces](https://github.com/shubhamjayawant/chess_engine/blob/master/screenshots/3.png)
+
+ _Chess engine playing with white pieces_
+ ![Chess engine playing with white pieces](https://github.com/shubhamjayawant/chess_engine/blob/master/screenshots/4.png)
