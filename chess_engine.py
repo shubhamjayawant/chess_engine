@@ -43,7 +43,7 @@ def new_training():
     load_games()
     initialize_weights_and_features()
 
-    for i in xrange(0,number_of_iterations):
+    for i in range(0,number_of_iterations):
 
         for index,game in enumerate(games):
 
@@ -177,8 +177,8 @@ def send_move():
 
     board.push_san(str(request.form['move']))
 
-    print board
-    print '----------------------------------------------'
+    print(board)
+    print('----------------------------------------------')
 
     final_move = get_move_to_be_played(board,whose_playing)
 
@@ -186,7 +186,7 @@ def send_move():
 
     board.push_san(final_move)
     
-    print board
+    print(board)
 
     if whose_playing == chess.WHITE:
         whose_playing = chess.BLACK
@@ -207,7 +207,7 @@ def force_play():
 
     board.push_san(final_move)
     
-    print board
+    print (board)
 
     if whose_playing == chess.WHITE:
         whose_playing = chess.BLACK
@@ -223,7 +223,7 @@ def initialize_weights_and_features():
 
     global weights,current_board_features
     
-    for i in xrange(0,18):
+    for i in range(0,18):
         weights.append(random.uniform(0.0, 1.0))
         current_board_features.append(0)
 
@@ -305,7 +305,7 @@ def get_target_value(move,board,whose_playing):
     global weights
     target_value = 0.0
 
-    for i in xrange(0,len(board_features)):
+    for i in range(0,len(board_features)):
 
         target_value = target_value + (board_features[i] * weights[i])
 
